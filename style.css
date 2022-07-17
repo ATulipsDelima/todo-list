@@ -20,12 +20,17 @@ body, html{
 
 .project-container{
     background: #eee;
+    padding: 3rem 3rem 0 3rem;
     
 }
+.project-container div{
+    cursor: pointer;
+ }
+
+
 /* defailt project */
-.inbox-container{
-    text-align: center;
-    background: orange;
+.inbox-container:hover{
+    background-color: #ddd;
 }
 .inbox-container p{
     display: inline;
@@ -33,13 +38,15 @@ body, html{
 }
 .inbox-container img{
     vertical-align: middle;
-    height: 2em;
-    width: 2em;
 }
+
 /* end default project */
 /* project creator */
 .project-holder{
 
+}
+.project-holder .project:hover, .project-holder .create-project:hover{
+ background-color: #ddd;
 }
 
 .project-holder p{
@@ -48,15 +55,31 @@ body, html{
 .project-holder img{
     vertical-align: middle;
 }
+.project-holder h3{
+    margin-bottom: 0;
+}
+
 
 /* form */
 .create-project-form{
-
+ padding-right: 0.5rem;
 }
 
 .create-project-form input{
     display: block;
     margin-bottom: .5rem;
+    width: 100%;
+    height: 20px;
+    border: none;
+    border-bottom: 1px solid #000;
+    background-color: #ddd;
+
+}
+.create-project-form button{
+    background-color: pink;
+    border: none;
+    padding: 5px;
+
 }
 /* end form */
 /* end project creator */

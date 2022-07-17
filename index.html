@@ -13,7 +13,7 @@
         <div class="project-container">
             
             <div class="inbox-container">
-                <img src="./icons/inbox.svg" alt="inny">
+                <img src="./icons/inbox.svg" alt="inbox">
                 <p>Inbox</p>
             </div>
 
@@ -25,7 +25,7 @@
                     <p>create project</p>
                 </div>
                 <div class="create-project-form" hidden>
-                    <input type="text" placeholder="Enter Name">
+                    <input type="text" placeholder="Project Name">
                     <button class="add">Add</button>
                     <button class="cancel">Cancel</button>
                 </div>
@@ -35,7 +35,56 @@
                 </div>
             </div>
         </div>
-        <div class="task-container">task</div>
+        <div class="task-container">
+            <button class="create-task">
+                <img src="./icons/plus.svg" alt="add">
+                <p>Add Task</p>
+            </button>
+
+            <form class="create-task-form">
+                <div>
+                    <input type="text" placeholder="Task Tame" id="title">
+                    <input type="text" placeholder="Due Date" id="duedate" onfocus="(this.type='date')" onblur="(this.type='text')">
+                    <select name="" id="project-select">
+                        <option value="inbox">inbox</option>
+                    </select>
+                </div>
+                <div>
+                    <select id="task-priority">
+                        <option value="none">none</option>
+                        <option value="low">Low</option>
+                        <option value="medium">Medium</option>
+                        <option value="high">High</option>
+                    </select>
+                    <button id="add">add</button>
+                    <button id="cancel">Cancel</button>
+                </div>
+            </form>
+            <div class="cards">
+                <div class="card">
+                    <div class="card-show">
+                        <button class="checked-btn">
+                            <img src="./icons/checkbox-blank.svg" alt="blank check box" height="20px" width="20px">
+                        </button>
+                        
+                        <p id="title">tacos</p>
+                        <p id="duedate">2020-22-11</p>
+                        <div class="card-btn">
+                            <button class="expand-btn">
+                                <img src="./icons/expand-down.svg" alt="expand down">
+                            </button>
+                            <button class="trash-btn">
+                                <img src="./icons/trash.svg" alt="trash">
+                            </button>
+                        </div>
+                    </div>
+                    <div class="card-hidden">
+                        <p>Project: <b>inbox</b></p>
+                        <p>Priority: <b>High</b></p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
     <script type="module" src="./js/main.js"></script>
 </body>
