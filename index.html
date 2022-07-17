@@ -36,14 +36,14 @@
             </div>
         </div>
         <div class="task-container">
-            <button class="create-task">
+            <button class="create-task-btn">
                 <img src="./icons/plus.svg" alt="add">
                 <p>Add Task</p>
             </button>
 
-            <form class="create-task-form">
+            <form class="create-task-form" >
                 <div>
-                    <input type="text" placeholder="Task Tame" id="title">
+                    <input type="text" placeholder="Task Name" id="title">
                     <input type="text" placeholder="Due Date" id="duedate" onfocus="(this.type='date')" onblur="(this.type='text')">
                     <select name="" id="project-select">
                         <option value="inbox">inbox</option>
@@ -51,12 +51,12 @@
                 </div>
                 <div>
                     <select id="task-priority">
-                        <option value="none">none</option>
+                        <option value="none">Select Priority</option>
                         <option value="low">Low</option>
                         <option value="medium">Medium</option>
                         <option value="high">High</option>
                     </select>
-                    <button id="add">add</button>
+                    <button id="add" onclick="return false">add</button>
                     <button id="cancel">Cancel</button>
                 </div>
             </form>
@@ -79,8 +79,8 @@
                         </div>
                     </div>
                     <div class="card-hidden">
-                        <p>Project: <b>inbox</b></p>
-                        <p>Priority: <b>High</b></p>
+                        <p id="project-name">Project: <b>inbox</b></p>
+                        <p id="task-priority">Priority: <b>High</b></p>
                     </div>
                 </div>
             </div>
