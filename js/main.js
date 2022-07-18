@@ -1,5 +1,11 @@
 import {add_project, add_task} from "./add.js";
 import { toggle_project_off, toggle_project_on, toggle_task_off, toggle_task_on } from "./toggle.js";
+import {show_all} from './filter.js';
+import { checkbox_clicked } from "./task_btn.js";
+
+// get defalult project
+const inbox_project = document.querySelector(".inbox-container");
+
 // project form btns
 const add_project_btn = document.querySelector(".create-project-form .add");
 const cancel_project = document.querySelector(".create-project-form .cancel");
@@ -10,6 +16,9 @@ const create_project_btn = document.querySelector(".create-project");
 add_project_btn.addEventListener('click', () => add_project());
 cancel_project.addEventListener('click', () => toggle_project_off());
 create_project_btn.addEventListener('click', ()=> toggle_project_on());
+
+// default project event listener
+inbox_project.addEventListener('click', ()=>show_all());
 
 
 // task form btn
@@ -27,3 +36,6 @@ add_task_btn.addEventListener('click', ()=>{
 } );
 cancel_task.addEventListener('click', ()=> toggle_task_off());
 create_task_btn.addEventListener('click', ()=> toggle_task_on());
+
+
+
