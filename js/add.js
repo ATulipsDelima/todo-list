@@ -1,4 +1,4 @@
-import { toggle_project_off } from "./toggle.js";
+import { toggle_project_off, toggle_task_off } from "./toggle.js";
 import {filter_task} from "./filter.js";
 import { checkbox_clicked, expand_clicked } from "./task_btn.js";
 
@@ -10,6 +10,7 @@ const name = document.querySelector(".create-project-form input");
 // create container for elements
 let new_project = document.createElement("div")
 new_project.classList.add("project")
+new_project.addEventListener('click', (e)=>{filter_task(e.target.childNodes[0].textContent)})
 
 //PROJECT NAME 
 let title = document.createElement("p");
@@ -63,7 +64,7 @@ const add_task = () =>{
     new_card.innerHTML = `
             <div class="card-show">
             <button class="checked-btn">
-                <img src="./icons/checkbox-blank.svg" alt="blank check box" height="20px" width="20px" class="checked-btn-img">
+                <img src="./icons/checkbox-blank.svg" alt="blank check box" height="24px" width="24px" class="checked-btn-img">
             </button>
             
             <p id="title">${form_data["title"]}</p>
@@ -77,7 +78,7 @@ const add_task = () =>{
                 </button>
             </div>
         </div>
-        <div class="card-hidden" >
+        <div class="card-hidden" hidden>
             <p id="project-name">Project: <b>${form_data["project-select"]}</b></p>
             <p id="task-priority">Priority: <b>${form_data["task-priority"]}</b></p>
         </div>
@@ -103,22 +104,28 @@ const add_task = () =>{
     // add event listenrs to button
     new_card.addEventListener('click', function(event) {
         if(event.target.classList.contains("checked-btn")){
-            checkbox_clicked(event.target.childNodes[1],event.target.parentElement.parentElement );
+            //if button clicked
+            checkbox_clicked(event.target.childNodes[1],event.target.parentElement.parentElement, event.target.nextSibling.nextSibling );
         }else if(event.target.classList.contains("checked-btn-img")){
-            checkbox_clicked(event.target, event.target.parentElement.parentElement.parentElement);
+            //if image clicked
+            checkbox_clicked(event.target, event.target.parentElement.parentElement.parentElement, event.target.parentElement.nextSibling.nextSibling);
         }else if(event.target.classList.contains("expand-btn")){
+            //if button clicked
             expand_clicked(event.target.childNodes[1],event.target.parentElement.parentElement.parentElement.childNodes[3]);
         }else if(event.target.classList.contains("expand-btn-img")){
+            //if image clicked
             expand_clicked(event.target, event.target.parentElement.parentElement.parentElement.parentElement.childNodes[3])
         }else if(event.target.classList.contains("trash-btn")){
+            //if button clicked
             event.target.parentElement.parentElement.parentElement.remove();
         }else if(event.target.classList.contains("trash-btn-img")){
+            //if image clicked
             event.target.parentElement.parentElement.parentElement.parentElement.remove()
         }
         
      }) 
     
-    
+     toggle_task_off();
 
 }
    

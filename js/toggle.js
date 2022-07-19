@@ -28,7 +28,7 @@ const toggle_task_off = () =>{
     const form = document.querySelector(".create-task-form");
     const create_btn = document.querySelector(".create-task-btn");
 
-    create_btn.style.display = "block";
+    create_btn.style.display = "flex";
     form.style.display = "none";
     
 }

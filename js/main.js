@@ -3,6 +3,14 @@ import { toggle_project_off, toggle_project_on, toggle_task_off, toggle_task_on 
 import {show_all} from './filter.js';
 import { checkbox_clicked } from "./task_btn.js";
 
+// nav
+const home_icon = document.querySelector("#home-icon");
+const header = document.querySelector(".header-container h2")
+
+// nav event listeners
+home_icon.addEventListener('click', ()=>show_all());
+header.addEventListener('click', ()=>show_all());
+
 // get defalult project
 const inbox_project = document.querySelector(".inbox-container");
 

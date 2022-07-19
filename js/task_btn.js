@@ -1,17 +1,16 @@
 // not complete
-const checkbox_clicked = (image, card) =>{
-   console.log(image);
+const checkbox_clicked = (image, card, title) =>{
    //// need to add card
-    if(!image.classList.contains("checked")){
+    if(!card.classList.contains("checked")){
        image.src = "./icons/checkbox-marked.svg";
-       image.classList.add("checked")
+       card.classList.add("checked")
+       title.classList.add("strike");
 
     }else{
         image.src = "./icons/checkbox-blank.svg";
-        image.classList.remove("checked")
+        card.classList.remove("checked");
+        title.classList.remove("strike");
     }
-    
-    console.log(card);
 
 };
 // completed
@@ -19,7 +18,7 @@ const expand_clicked = (image, hidden_container)=>{
     if(!image.classList.contains("expanded")){
         image.src = "./icons/expand-up.svg";
         image.classList.add("expanded");
-        hidden_container.style.display = "block";
+        hidden_container.style.display = "flex";
  
      }else{
          image.src = "./icons/expand-down.svg";
